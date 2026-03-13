@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Dashboard | Whip My Soul</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Whip My Soul Logo">
+        <span>Whip My Soul</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">View Site</a>
+        <a href="admin.html" class="active">Admin</a>
+      </div>
+      <div class="mobile-toggle" onclick="toggleAdminSidebar()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <h3>Admin Panel</h3>
+      <a href="#" data-section="admin-overview" class="active">&#128202; Overview</a>
+      <a href="#" data-section="admin-menu">&#127860; Menu Items</a>
+      <a href="#" data-section="admin-hours">&#128336; Opening Hours</a>
+      <a href="#" data-section="admin-gallery">&#128247; Gallery</a>
+      <a href="#" data-section="admin-dishes">&#11088; Popular Dishes</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- Overview Section -->
+      <div id="admin-overview" class="admin-section active">
+        <h2 style="font-family:var(--font-heading); margin-bottom:25px;">Dashboard Overview</h2>
+        <div class="admin-stats">
+          <div class="stat-card">
+            <div class="number">35+</div>
+            <div class="label">Menu Items</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">4.7</div>
+            <div class="label">Google Rating</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">2,000+</div>
+            <div class="label">Reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">6</div>
+            <div class="label">Days Open</div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Quick Actions</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="admin-btn admin-btn-add" onclick="document.querySelector('[data-section=admin-menu]').click()">Edit Menu</button>
+            <button class="admin-btn admin-btn-add" onclick="document.querySelector('[data-section=admin-hours]').click()">Update Hours</button>
+            <button class="admin-btn admin-btn-add" onclick="document.querySelector('[data-section=admin-gallery]').click()">Manage Gallery</button>
+            <button class="admin-btn admin-btn-add" onclick="document.querySelector('[data-section=admin-dishes]').click()">Edit Homepage Dishes</button>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h3>Restaurant Info</h3>
+          <p><strong>Name:</strong> Whip My Soul</p>
+          <p style="margin-top:8px;"><strong>Address:</strong> 11416 N FM 620 Unit F &amp; G, Austin, TX 78726</p>
+          <p style="margin-top:8px;"><strong>Phone:</strong> (512) 514-0103</p>
+          <p style="margin-top:8px;"><strong>Price Range:</strong> $20 - $30 per person</p>
+        </div>
+      </div>
+
+      <!-- Menu Section -->
+      <div id="admin-menu" class="admin-section">
+        <h2 style="font-family:var(--font-heading); margin-bottom:25px;">Menu Management</h2>
+        <div class="admin-card">
+          <h3>All Menu Items</h3>
+          <p style="color:var(--gray); margin-bottom:15px;">Edit, add, or remove menu items. Changes are saved to browser storage.</p>
+          <div id="admin-menu-list"></div>
+        </div>
+      </div>
+
+      <!-- Hours Section -->
+      <div id="admin-hours" class="admin-section">
+        <h2 style="font-family:var(--font-heading); margin-bottom:25px;">Opening Hours</h2>
+        <div class="admin-card">
+          <h3>Weekly Schedule</h3>
+          <p style="color:var(--gray); margin-bottom:15px;">Update your restaurant opening and closing times.</p>
+          <div id="admin-hours-list"></div>
+        </div>
+      </div>
+
+      <!-- Gallery Section -->
+      <div id="admin-gallery" class="admin-section">
+        <h2 style="font-family:var(--font-heading); margin-bottom:25px;">Gallery Management</h2>
+        <div class="admin-card">
+          <h3>Gallery Images</h3>
+          <p style="color:var(--gray); margin-bottom:15px;">Add, edit, or remove gallery images. Use image URLs for now.</p>
+          <div id="admin-gallery-list"></div>
+        </div>
+      </div>
+
+      <!-- Popular Dishes Section -->
+      <div id="admin-dishes" class="admin-section">
+        <h2 style="font-family:var(--font-heading); margin-bottom:25px;">Homepage Popular Dishes</h2>
+        <div class="admin-card">
+          <h3>Featured Dishes</h3>
+          <p style="color:var(--gray); margin-bottom:15px;">Manage the dishes shown on the homepage.</p>
+          <div id="admin-dishes-list"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="admin-modal" id="admin-modal" onclick="if(event.target===this)closeModal()">
+    <div class="admin-modal-content" id="modal-body"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
