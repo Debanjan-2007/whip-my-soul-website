@@ -1,10 +1,3 @@
-/* ===== Loading Screen ===== */
-window.addEventListener('load', () => {
-  const loader = document.querySelector('.loading-screen');
-  if (loader) {
-    setTimeout(() => loader.classList.add('hidden'),100);
-  }
-});
 
 /* ===== Sticky Navbar ===== */
 const navbar = document.querySelector('.navbar');
