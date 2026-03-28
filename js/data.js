@@ -24,9 +24,32 @@ const defaultData = {
       { name: 'Baked Chicken Dinner Plate', price: 17.99, description: 'Served with 2 sides and cornbread' },
       { name: 'Baked Fish Dinner Plate', price: 18.50, description: 'Served with 2 sides and cornbread' }
     ],
+    samplePlatters: [
+      { name: '2 Wings, 2 Fish And 2 Tenders Platter', price: 24.99, description: '' },
+      { name: '3 Wings And 3 Tenders Platter', price: 23.99, description: '' },
+      { name: '2 Wings And 2 Tenders Platter', price: 18.99, description: '' },
+      { name: '4 Shrimp And 2 Wings Platter', price: 18.99, description: '' },
+      { name: '4 Shrimp And 2 Tenders Platter', price: 18.99, description: '' },
+      { name: '4 Shrimp And 2 Piece Fish Platter', price: 19.50, description: '' },
+      { name: '1 Pork Chop, 1 Wing And 1 Fish Platter', price: 19.50, description: '' }
+    ],
     soulEggRolls: [
       { name: 'Collard Green Egg Rolls', price: 8.50, description: 'Homemade collard green filling' },
       { name: 'Cheezy Mac and Shrimp Egg Rolls', price: 9.50, description: 'Mac & cheese with shrimp filling' }
+    ],
+    shrimpAndGrits: [
+      { name: 'Shrimp And Grits', price: 17.50, description: '' }
+    ],
+    buckets: [
+      { name: '12 Piece Chicken Bucket With 2 Large Sides', price: 40.95, description: '' },
+      { name: '12 Piece Fish Bucket With 2 Large Sides', price: 41.95, description: '' }
+    ],
+    sandwichesAndFries: [
+      { name: 'Buffalo Chicken Sandwich', price: 12.75, description: '' },
+      { name: 'Pork Chop Sandwich', price: 12.75, description: '' }
+    ],
+    waffles: [
+      { name: 'Waffles', price: 6.50, description: '' }
     ],
     sides: [
       { name: 'Fried Okra', price: 5.00, description: '' },
@@ -37,6 +60,14 @@ const defaultData = {
       { name: 'Cornbread', price: 1.25, description: '' },
       { name: 'Mean Greens', price: 5.00, description: '' },
       { name: 'Cheese Grits', price: 5.00, description: '' }
+    ],
+    weekendSpecialSides: [
+      { name: 'Black Eyed Peas', price: 5.00, description: '' },
+      { name: 'Southern Corn Bread Dressing', price: 5.00, description: '' },
+      { name: 'Fried Cabbage', price: 5.00, description: '' }
+    ],
+    kidsMeal: [
+      { name: 'Kids Meal', price: 7.50, description: 'Wing or tender' }
     ],
     desserts: [
       { name: 'Homemade Peach Cobbler', price: 7.25, description: '' },
@@ -61,12 +92,18 @@ const defaultData = {
     sunday: { open: '11:00 AM', close: '4:30 PM', closed: false }
   },
   gallery: [
-    { src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80', alt: 'Fried Catfish' },
-    { src: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80', alt: 'Soul Food Plate' },
+    { src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80', alt: 'Fried Catfish Plate' },
+    { src: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80', alt: 'Soul Food Spread' },
     { src: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80', alt: 'Mac and Cheese' },
-    { src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80', alt: 'Fried Chicken' },
-    { src: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80', alt: 'Waffles' },
-    { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80', alt: 'Restaurant Interior' }
+    { src: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80', alt: 'Fried Chicken and Waffles' },
+    { src: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80', alt: 'Golden Waffles' },
+    { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80', alt: 'Food Spread' },
+    { src: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80', alt: 'BBQ Ribs and Meat' },
+    { src: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&q=80', alt: 'Fried Shrimp' },
+    { src: 'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=600&q=80', alt: 'Peach Cobbler' },
+    { src: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80', alt: 'Grilled Dishes' },
+    { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', alt: 'Restaurant Interior' },
+    { src: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80', alt: 'Southern Cooking' }
   ],
   popularDishes: [
     { name: 'Fried Catfish', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80', description: 'Southern-style crispy catfish fillets' },
@@ -131,8 +168,15 @@ function renderMenu() {
     appetizers: 'Appetizers',
     wafflePlates: 'Waffle Plates',
     dinnerPlates: 'Dinner Plates',
+    samplePlatters: 'Sample Platters',
     soulEggRolls: 'Soul Egg Rolls',
+    shrimpAndGrits: 'Shrimp and Grits',
+    buckets: 'Buckets',
+    sandwichesAndFries: 'Sandwiches and Fries',
+    waffles: 'Waffles',
     sides: 'Sides',
+    weekendSpecialSides: 'Weekend Special Sides',
+    kidsMeal: 'Kids Meal',
     desserts: 'Desserts',
     drinks: 'Drinks'
   };
