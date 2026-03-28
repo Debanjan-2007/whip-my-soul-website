@@ -130,11 +130,8 @@
         </div>
         <div>
           <h4>Hours</h4>
-          <div class="footer-links">
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Tue - Thu: 11AM - 8:30PM</p>
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Fri - Sat: 11AM - 8:30PM</p>
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Sunday: 11AM - 4:30PM</p>
-            <p style="color:var(--primary);font-size:0.9rem;">Monday: Closed</p>
+          <div class="footer-links" id="footer-hours">
+            <!-- Dynamically rendered from localStorage by js/data.js -->
           </div>
         </div>
         <div class="footer-contact">
@@ -150,6 +147,7 @@
   </footer>
 
   <a href="tel:+15125140103" class="click-to-call" aria-label="Call us">&#128222;</a>
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
