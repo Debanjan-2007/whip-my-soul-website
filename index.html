@@ -70,60 +70,7 @@
         <p>Taste the soul in every bite. All our dishes are homemade with love.</p>
       </div>
       <div class="dishes-grid">
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Fried Catfish" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Fried Catfish</h3>
-            <p>Southern-style crispy catfish fillets</p>
-          </div>
-        </div>
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Oxtails" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Oxtails</h3>
-            <p>Slow-braised tender oxtails</p>
-          </div>
-        </div>
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&q=80" alt="Fried Shrimp" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Fried Shrimp</h3>
-            <p>Golden crispy fried shrimp</p>
-          </div>
-        </div>
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80" alt="Chicken & Waffles" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Chicken & Waffles</h3>
-            <p>Classic southern combo</p>
-          </div>
-        </div>
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80" alt="Mac & Cheese" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Mac & Cheese</h3>
-            <p>Homemade cheezy mac</p>
-          </div>
-        </div>
-        <div class="dish-card">
-          <div class="dish-card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=600&q=80" alt="Peach Cobbler" class="dish-card-img">
-          </div>
-          <div class="dish-card-body">
-            <h3>Peach Cobbler</h3>
-            <p>Warm homemade peach cobbler</p>
-          </div>
-        </div>
+        <!-- Dynamically rendered from localStorage by js/data.js -->
       </div>
     </div>
   </section>
@@ -199,11 +146,8 @@
         </div>
         <div>
           <h4>Hours</h4>
-          <div class="footer-links">
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Tue - Thu: 11AM - 8:30PM</p>
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Fri - Sat: 11AM - 8:30PM</p>
-            <p style="color:#aaa;font-size:0.9rem;margin-bottom:5px;">Sunday: 11AM - 4:30PM</p>
-            <p style="color:var(--primary);font-size:0.9rem;">Monday: Closed</p>
+          <div class="footer-links" id="footer-hours">
+            <!-- Dynamically rendered from localStorage by js/data.js -->
           </div>
         </div>
         <div class="footer-contact">
@@ -224,6 +168,7 @@
     &#128222;
   </a>
 
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
